@@ -58,8 +58,8 @@ end
 # board = Board.new
 
 board = Board.new(
-          x_coord: 20,
-          y_coord: 20
-          )
+                  x_coord: 20,
+                  y_coord: 20
+                  )
 
 board.attack_board
