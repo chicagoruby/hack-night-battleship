@@ -1,3 +1,5 @@
+require_relative 'battleship'
+
 class Player
   attr_accessor :unplaced_ships
 
