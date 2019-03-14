@@ -19,7 +19,7 @@ class Board
     grid
   end
 
-  def display_board
+  def attack_board
     @grid.each do |row|
       formatted_row = ""
       row.each do |space|
@@ -27,6 +27,24 @@ class Board
           formatted_row += "X "
         elsif space.attack
           formatted_row += "O "
+        else
+          formatted_row += "_ "
+        end
+      end
+      puts formatted_row
+    end
+  end
+
+  def your_board
+    @grid.each do |row|
+      formatted_row = ""
+      row.each do |space|
+        if space.has_ship && space.attack
+          formatted_row += "X "
+        elsif space.attack
+          formatted_row += "O "
+        elsif space.has_ship
+          formatted_row += "S "
         else
           formatted_row += "_ "
         end
@@ -44,4 +62,4 @@ board = Board.new(
           y_coord: 20
           )
 
-board.display_board
+board.attack_board
